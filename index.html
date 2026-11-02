@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free Value Investing Workshop</title>
+<meta name="description" content="A free, live 2-hour workshop for beginners on patient, process-first value investing in the Graham and Buffett tradition.">
+<!-- Social preview (ads and shared posts). Replace the image URL with a 1200x630 image of your own. -->
+<meta property="og:title" content="Free live workshop: learn to judge a business before its stock price">
+<meta property="og:description" content="Two hours on Zoom. Process, not predictions. For beginners.">
+<meta property="og:image" content="https://example.com/og-image.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<script>
+/* ============================== EDIT THESE ============================== */
+window.CONFIG = {
+  ENDPOINT: 'https://script.google.com/macros/s/AKfycby7hDlsQlY_MuID1qq8--PerLn-wiDTDhJRrJd5pq683_AFjWWNreUajE_swxdssGXfAw/exec', // Apps Script web app URL
+  FALLBACK_FORM_URL: 'https://docs.google.com/forms/d/e/1FAIpQLSeB2olRJ94DwrQMsvEyRbSuQ4Z2hVkTeaWJo878G-sI39Uzmw/viewform',  // shown only if the endpoint can't be reached
+  META_PIXEL_ID: '',   // e.g. '1234567890' — leave blank to disable
+  GA4_ID: '',          // e.g. 'G-XXXXXXX'  — leave blank to disable
+  HOST_TZ_LABEL: 'Eastern Time'
+};
+/* ======================================================================== */
+</script>
+
+<style>
+  :root {
+    --bg: #f7f4ee; --card: #ffffff; --ink: #1d2420; --muted: #5b6560; --line: #e2ddd2;
+    --accent: #1f5c46; --accent-ink: #ffffff; --accent-soft: #e6efe9; --warn: #9b2c2c;
+    --radius: 14px;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body { background: var(--bg); color: var(--ink); font: 16px/1.6 Inter, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+  header.top { padding: 18px 0; border-bottom: 1px solid var(--line); }
+  header.top .wrap { display: flex; justify-content: space-between; align-items: center; }
+  .brand { font-family: Fraunces, Georgia, serif; font-weight: 600; font-size: 18px; }
+  .top a { color: var(--accent); font-weight: 600; text-decoration: none; font-size: 14px; }
+
+  .hero { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 48px; padding: 56px 0 48px; align-items: start; }
+  .eyebrow { display: inline-block; font-size: 13px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--accent); background: var(--accent-soft); padding: 5px 10px; border-radius: 999px; }
+  h1 { font-family: Fraunces, Georgia, serif; font-weight: 600; font-size: clamp(32px, 4.6vw, 50px); line-height: 1.1; margin: 18px 0 16px; letter-spacing: -.01em; }
+  .lede { font-size: 19px; color: var(--muted); max-width: 34em; margin: 0 0 24px; }
+  .session { border-left: 3px solid var(--accent); padding: 4px 0 4px 16px; margin: 24px 0; }
+  .session .label { font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; font-weight: 600; }
+  .session .when { font-size: 20px; font-weight: 600; margin-top: 2px; }
+  .session .host { font-size: 14px; color: var(--muted); }
+  .session .count { font-size: 14px; color: var(--accent); font-weight: 600; margin-top: 4px; }
+  .facts { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px 22px; color: var(--muted); font-size: 15px; }
+  .facts li::before { content: "✓ "; color: var(--accent); font-weight: 700; }
+
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; box-shadow: 0 1px 2px rgba(0,0,0,.03); }
+  .card h2 { font-family: Fraunces, Georgia, serif; font-size: 24px; margin: 0 0 4px; font-weight: 600; }
+  .card .sub { color: var(--muted); font-size: 14px; margin: 0 0 18px; }
+  label.f { display: block; font-size: 14px; font-weight: 500; margin: 12px 0 6px; }
+  input[type=text], input[type=email] { width: 100%; font: inherit; padding: 12px 14px; border: 1px solid #cfc9bc; border-radius: 10px; background: #fff; }
+  input:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: transparent; }
+  .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .check { display: flex; gap: 10px; align-items: flex-start; font-size: 13.5px; color: var(--muted); margin-top: 14px; line-height: 1.45; }
+  .check input { margin-top: 3px; width: 17px; height: 17px; accent-color: var(--accent); flex: none; }
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  button.cta { width: 100%; margin-top: 20px; font: 600 17px Inter, sans-serif; color: var(--accent-ink); background: var(--accent); border: 0; border-radius: 10px; padding: 15px; cursor: pointer; }
+  button.cta:hover { filter: brightness(1.08); }
+  button.cta:disabled { opacity: .6; cursor: wait; }
+  .err { color: var(--warn); font-size: 14px; margin-top: 12px; min-height: 1px; }
+  .fine { font-size: 12px; color: var(--muted); margin-top: 12px; text-align: center; }
+  .success { display: none; text-align: center; padding: 10px 0; }
+  .success .big { font-family: Fraunces, Georgia, serif; font-size: 26px; font-weight: 600; margin: 6px 0; }
+  .success p { color: var(--muted); }
+
+  section.block { padding: 56px 0; border-top: 1px solid var(--line); }
+  section.block h2 { font-family: Fraunces, Georgia, serif; font-size: 30px; font-weight: 600; margin: 0 0 24px; }
+  .grid4 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  .item { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; }
+  .item .n { font-family: Fraunces, Georgia, serif; color: var(--accent); font-size: 15px; font-weight: 600; }
+  .item h3 { margin: 6px 0 6px; font-size: 18px; }
+  .item p { margin: 0; color: var(--muted); font-size: 15px; }
+  .fit { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .fit ul { margin: 0; padding-left: 20px; color: var(--muted); }
+  .fit li { margin: 6px 0; }
+  .fit h3 { margin: 0 0 10px; font-size: 18px; }
+  .about { display: grid; grid-template-columns: 160px 1fr; gap: 28px; align-items: start; }
+  .about .photo { width: 160px; height: 160px; border-radius: 50%; background: var(--accent-soft) center/cover; border: 1px solid var(--line); }
+  .about p { color: var(--muted); max-width: 40em; }
+  details { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px 20px; margin-bottom: 10px; }
+  summary { font-weight: 600; cursor: pointer; }
+  details p { color: var(--muted); margin: 10px 0 0; }
+  .final { text-align: center; }
+  .final a { display: inline-block; margin-top: 8px; background: var(--accent); color: #fff; padding: 14px 28px; border-radius: 10px; text-decoration: none; font-weight: 600; }
+  footer { border-top: 1px solid var(--line); padding: 32px 0 48px; font-size: 13px; color: var(--muted); }
+  footer a { color: var(--muted); }
+
+  @media (max-width: 860px) {
+    .hero { grid-template-columns: 1fr; gap: 28px; padding: 36px 0 32px; }
+    .grid4, .fit { grid-template-columns: 1fr; }
+    .about { grid-template-columns: 1fr; }
+    .about .photo { width: 120px; height: 120px; }
+  }
+  @media (max-width: 420px) { .row2 { grid-template-columns: 1fr; } .card { padding: 20px; } }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="brand">Capital Compounders</div>
+    <a href="#register">Save my seat</a>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="hero">
+    <div>
+      <span class="eyebrow">Free live workshop · 2 hours on Zoom</span>
+      <h1>Learn to judge a business before you judge its stock price.</h1>
+      <p class="lede">A free, live session for beginners on the patient, process-first way of investing that Benjamin Graham and Warren Buffett wrote about. No hot tips, no predictions. Just a way of thinking you can keep using.</p>
+
+      <div class="session" id="session">
+        <div class="label">Next session</div>
+        <div class="when" id="when">Checking the schedule…</div>
+        <div class="host" id="host"></div>
+        <div class="count" id="count"></div>
+      </div>
+
+      <ul class="facts">
+        <li>Free</li><li>Live, with Q&amp;A</li><li>Beginner friendly</li><li>Calendar invite by email</li>
+      </ul>
+    </div>
+
+    <div class="card" id="register">
+      <div id="formWrap">
+        <h2>Save your seat</h2>
+        <p class="sub">We'll email your Zoom link and a calendar invite right away.</p>
+        <form id="regForm" novalidate>
+          <label class="f" for="name">Name</label>
+          <input id="name" type="text" autocomplete="name" required>
+          <label class="f" for="email">Email</label>
+          <input id="email" type="email" autocomplete="email" inputmode="email" required>
+          <label class="f" for="phone">Phone</label>
+          <input id="phone" type="tel" autocomplete="tel" inputmode="tel" required>
+          <div class="hp" aria-hidden="true"><label>Website <input id="website" type="text" tabindex="-1" autocomplete="off"></label></div>
+
+          <label class="check"><input id="ack" type="checkbox" required>
+            <span>I understand this workshop is educational and is not personalized investment advice, and that I'll get a confirmation and reminder emails for this session.</span></label>
+
+          <button class="cta" id="submitBtn" type="submit">Save my free seat</button>
+          <div class="err" id="err" role="alert"></div>
+          <p class="fine">No spam. Your details are used only for this workshop.</p>
+        </form>
+      </div>
+      <div class="success" id="success" aria-live="polite">
+        <div style="font-size:34px">✓</div>
+        <div class="big">You're in.</div>
+        <p id="successWhen"></p>
+        <p>Your Zoom link and calendar invite are on their way. If you don't see the email in 5 minutes, check Promotions or Spam and mark it "not spam" so the reminders reach you.</p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<section class="block">
+  <div class="wrap">
+    <h2>What we'll work through together</h2>
+    <div class="grid4">
+      <div class="item"><div class="n">01</div><h3>Owning a business, not a ticker</h3><p>The mindset shift at the heart of Graham and Buffett's writing, and why it changes the questions you ask.</p></div>
+      <div class="item"><div class="n">02</div><h3>Price versus value</h3><p>What "margin of safety" means in plain terms, and why it's a habit more than a formula.</p></div>
+      <div class="item"><div class="n">03</div><h3>Reading a business simply</h3><p>A short, repeatable checklist for looking at a company before you ever look at its chart.</p></div>
+      <div class="item"><div class="n">04</div><h3>The mistakes that taught me most</h3><p>Real lessons from my own journey, so you can recognize the same traps earlier than I did.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <h2>Is this for you?</h2>
+    <div class="fit">
+      <div class="item"><h3>A good fit if you…</h3><ul>
+        <li>are new to investing, or have dabbled and want a steadier process</li>
+        <li>think in years and decades, not days</li>
+        <li>want to understand <em>why</em>, not just what</li></ul></div>
+      <div class="item"><h3>Probably not a fit if you…</h3><ul>
+        <li>want stock tips or trading signals</li>
+        <li>are looking for fast or guaranteed returns</li>
+        <li>need advice on your personal finances (please see a licensed advisor)</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap about">
+    <div class="photo" role="img" aria-label="Photo of Rajive Jain" style="background-image:url('')"></div>
+    <div>
+      <h2>Who's teaching</h2>
+      <p>I'm Rajive, a lifelong student of value investing. I've spent over 10 years learning this approach the slow way: reading, applying, making mistakes and writing down what they taught me.</p>
+      <p>I teach because I remember being a few steps back on this path and wishing someone had shown me the process instead of the hype. What I share is my own experience. Your results will depend on your own choices and circumstances.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <h2>Questions</h2>
+    <details><summary>Is it really free?</summary><p>Yes. The live workshop is free and stands on its own.</p></details>
+    <details><summary>Will you be selling anything?</summary><p>Yes, briefly, and I'd rather tell you now. At the end I'll describe my paid two-day L1 workshop for anyone who wants to go deeper, with a discount for people who are there live. There's no obligation, and you'll get full value from the free session either way.</p></details>
+    <details><summary>Will you tell me what to buy?</summary><p>No. I teach a way of thinking and show how I apply it to my own decisions. I don't give personal recommendations or tell anyone what to buy or sell.</p></details>
+    <details><summary>Will there be a recording?</summary><p>Please plan to attend live. That's where the Q&amp;A happens.</p></details>
+    <details><summary>What do I need?</summary><p>Zoom on a computer or phone, a notebook, and a question you'd like to work through.</p></details>
+  </div>
+</section>
+
+<section class="block final">
+  <div class="wrap">
+    <h2>Join the next session</h2>
+    <a href="#register">Save my free seat</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><strong>Educational content only.</strong> Nothing on this page or in the workshop is personalized investment, tax or legal advice. Investing involves risk, including the possible loss of principal. Past performance, including my own, does not predict future results, and individual results vary.</p>
+    <p>Capital Compounders · 255 Keats Way, Waterloo, Ontario, Canada · <a href="#">Privacy policy</a> · <a href="mailto:support@capitalcompounders.cc">Contact</a></p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var C = window.CONFIG;
+  var loadedAt = Date.now();
+
+  /* ---- Optional ad / analytics tags (only load when an ID is set) ---- */
+  if (C.META_PIXEL_ID) {
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', C.META_PIXEL_ID); fbq('track', 'PageView');
+  }
+  if (C.GA4_ID) {
+    var g = document.createElement('script'); g.async = true; g.src = 'https://www.googletagmanager.com/gtag/js?id=' + C.GA4_ID; document.head.appendChild(g);
+    window.dataLayer = window.dataLayer || []; window.gtag = function () { dataLayer.push(arguments); };
+    gtag('js', new Date()); gtag('config', C.GA4_ID);
+  }
+
+  /* ---- Next session: shown in the visitor's own time zone ---- */
+  var when = document.getElementById('when'), host = document.getElementById('host'), count = document.getElementById('count');
+  var startMs = null;
+  function fmt(ms, tz) {
+    var o = { weekday: 'long', month: 'long', day: 'numeric', hour: 'numeric', minute: '2-digit', timeZoneName: 'short' };
+    if (tz) o.timeZone = tz;
+    return new Intl.DateTimeFormat(undefined, o).format(new Date(ms));
+  }
+  function tickCount() {
+    if (!startMs) return;
+    var s = Math.floor((startMs - Date.now()) / 1000);
+    if (s <= 0) { count.textContent = 'Happening now. Register and we\'ll send the link.'; return; }
+    var d = Math.floor(s / 86400), h = Math.floor(s % 86400 / 3600), m = Math.floor(s % 3600 / 60);
+    count.textContent = 'Starts in ' + (d ? d + 'd ' : '') + h + 'h ' + m + 'm';
+    setTimeout(tickCount, 30000);
+  }
+  fetch(C.ENDPOINT + '?action=next')
+    .then(function (r) { return r.json(); })
+    .then(function (j) {
+      if (j.ok && j.open && j.start) {
+        startMs = j.start;
+        when.textContent = fmt(j.start);
+        var hostStr = fmt(j.start, 'America/Toronto');
+        host.textContent = hostStr !== when.textContent ? '(' + hostStr + ', ' + C.HOST_TZ_LABEL + ')' : 'About 2 hours, live on Zoom';
+        tickCount();
+      } else {
+        when.textContent = 'Next date announced soon';
+        host.textContent = 'Register now and we\'ll email you as soon as it\'s set.';
+      }
+    })
+    .catch(function () {
+      when.textContent = 'Every week, live on Zoom';
+      host.textContent = 'Register to get the next date by email.';
+    });
+
+  /* ---- Registration ---- */
+  var form = document.getElementById('regForm'), btn = document.getElementById('submitBtn'), err = document.getElementById('err');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    err.textContent = '';
+    var name = document.getElementById('name').value.trim();
+    var email = document.getElementById('email').value.trim();
+    var phone = document.getElementById('phone').value.trim();
+    if (!name) { err.textContent = 'Please enter your name.'; return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) { err.textContent = 'Please enter a valid email address.'; return; }
+    if (phone.replace(/\D/g, '').length < 7) { err.textContent = 'Please enter a valid phone number.'; return; }
+    if (!document.getElementById('ack').checked) { err.textContent = 'Please tick the acknowledgement box.'; return; }
+
+    btn.disabled = true; btn.textContent = 'Saving your seat…';
+    var payload = {
+      name: name, email: email, phone: phone, ack: true,
+      website: document.getElementById('website').value, elapsedMs: Date.now() - loadedAt
+    };
+    // text/plain avoids a CORS preflight, which Apps Script can't answer.
+    fetch(C.ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(payload) })
+      .then(function (r) { return r.json(); })
+      .then(function (j) {
+        if (!j.ok) throw new Error(j.error || 'Something went wrong.');
+        document.getElementById('formWrap').style.display = 'none';
+        document.getElementById('success').style.display = 'block';
+        if (startMs) document.getElementById('successWhen').textContent = 'See you ' + fmt(startMs) + '.';
+        if (window.fbq) fbq('track', 'Lead');
+        if (window.gtag) gtag('event', 'generate_lead');
+      })
+      .catch(function (x) {
+        btn.disabled = false; btn.textContent = 'Save my free seat';
+        var msg = (x && x.message && x.message !== 'Failed to fetch') ? x.message : 'We couldn\'t reach the registration system.';
+        err.innerHTML = '';
+        err.appendChild(document.createTextNode(msg + ' '));
+        if (C.FALLBACK_FORM_URL && !/PASTE/.test(C.FALLBACK_FORM_URL)) {
+          var a = document.createElement('a'); a.href = C.FALLBACK_FORM_URL; a.target = '_blank'; a.rel = 'noopener';
+          a.textContent = 'Use the backup form instead.'; err.appendChild(a);
+        }
+      });
+  });
+})();
+</script>
+</body>
+</html>
