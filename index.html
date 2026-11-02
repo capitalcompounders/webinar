@@ -9,6 +9,7 @@
 <meta property="og:title" content="Free live workshop: learn to judge a business before its stock price">
 <meta property="og:description" content="Two hours on Zoom. Process, not predictions. For beginners.">
 <meta property="og:image" content="https://example.com/og-image.jpg">
+<link rel="icon" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
@@ -37,6 +38,7 @@ window.CONFIG = {
   header.top { padding: 18px 0; border-bottom: 1px solid var(--line); }
   header.top .wrap { display: flex; justify-content: space-between; align-items: center; }
   .brand { font-family: Fraunces, Georgia, serif; font-weight: 600; font-size: 18px; }
+  .logo { height: 40px; width: auto; display: block; }
   .top a { color: var(--accent); font-weight: 600; text-decoration: none; font-size: 14px; }
 
   .hero { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 48px; padding: 56px 0 48px; align-items: start; }
@@ -105,7 +107,7 @@ window.CONFIG = {
 
 <header class="top">
   <div class="wrap">
-    <div class="brand">Capital Compounders</div>
+    <a class="brand" href="#"><img class="logo" src="logo.png" alt="Capital Compounders"></a>
     <a href="#register">Save my seat</a>
   </div>
 </header>
@@ -190,7 +192,7 @@ window.CONFIG = {
 
 <section class="block">
   <div class="wrap about">
-    <div class="photo" role="img" aria-label="Photo of Rajive Jain" style="background-image:url('')"></div>
+    <div class="photo" role="img" aria-label="Photo of Rajive Jain" style="background-image:url('photo.png')"></div>
     <div>
       <h2>Who's teaching</h2>
       <p>I'm Rajive, a lifelong student of value investing. I've spent over 10 years learning this approach the slow way: reading, applying, making mistakes and writing down what they taught me.</p>
